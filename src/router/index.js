@@ -82,7 +82,7 @@ export const constantRoutes = [{
 				import('@/views/dashboard/index'),
 			name: 'Dashboard',
 			meta: {
-				title: 'Dashboard',
+				title: '文章后台管理系统',
 				icon: 'dashboard',
 				affix: true
 			}

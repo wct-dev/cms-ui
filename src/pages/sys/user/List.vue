@@ -84,8 +84,10 @@ export default {
     }
   },
   created(){
+    
     this.loadUsers();
     this.loadRoles();
+    
   },
   methods:{
     loadRoles(){
@@ -122,16 +124,27 @@ export default {
         this.users = response.data;
       })
     },
+    
     deleteHandler(id){
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-          this.$message({
-            type: 'success',
-            message:id
-          });
+          let url = "/user/deleteById"
+					request.get(url, {
+							params: {
+								id
+							}
+						})
+						.then(response => {
+							this.$message({
+								type: 'success',
+								message: response.message
+							});
+							// 重载数据
+							 this.loadUsers();
+						})
       })
     },
     toEdit(record){

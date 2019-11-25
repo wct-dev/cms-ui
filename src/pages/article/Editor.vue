@@ -4,8 +4,8 @@
 		<el-form ref="form" :model="form" label-width="80px">
 			<el-form-item label="所属栏目">
 				<el-select v-model="form.categoryId" placeholder="请选择活动区域">
-					<el-option label="IT" value="1"></el-option>
-					<el-option label="娱乐" value="2"></el-option>
+					<el-option label="IT" value="3"></el-option>
+					<el-option label="娱乐" value="4"></el-option>
 				</el-select>
 			</el-form-item>
 			<el-form-item label="标题">

@@ -37,7 +37,7 @@
 		// 声明周期钩子函数
 		created() {
 			// 查询所有资讯信息
-			request.get("http://localhost:8888/article/cascadeFindAll")
+			request.get("/article/cascadeFindAll")
 				.then(response => {
 					this.tableData = response.data;
 				})
@@ -51,7 +51,7 @@
 				this.$router.go(-1);
 			},
 			reloadData() {
-				let url = "http://localhost:8888/article/findAll"
+				let url = "/article/findAll"
 				request.get(url).then(response => {
 					this.tableData = response.data;
 				})
@@ -75,7 +75,7 @@
 						type: 'warning'
 					})
 					.then(() => {
-						let url = "http://localhost:8888/article/batchDelete"
+						let url = "/article/batchDelete"
 						request.request({
 								url,
 								method: "post",
@@ -102,7 +102,7 @@
 					cancelButtonText: '取消',
 					type: 'warning'
 				}).then(() => {
-					let url = "http://localhost:8888/article/deleteById"
+					let url = "/article/deleteById"
 					request.get(url, {
 							params: {
 								id

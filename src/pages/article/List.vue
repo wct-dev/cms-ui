@@ -37,6 +37,12 @@
 		},
 		// 方法，模块中要用到的方法，
 		methods: {
+			reloadData() {
+				let url = "/article/findAll"
+				request.get(url).then(response => {
+					this.tableData = response.data;
+				})
+			},
 			toPublishArticle() {
 				// 跳转页面
 				this.$router.push({
